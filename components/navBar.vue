@@ -1,43 +1,88 @@
 <template>
-  <v-sheet height="400" class="overflow-hidden" style="position: relative;">
-    <v-container class="fill-height">
-      <v-row align="center" justify="center">
-        <v-btn color="pink" dark @click.stop="drawer = !drawer">Toggle</v-btn>
-      </v-row>
-    </v-container>
-    <v-navigation-drawer v-model="drawer" absolute temporary>
-      <v-list-item>
-        <v-list-item-avatar>
-          <!-- <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img> -->
-        </v-list-item-avatar>
-
-        <v-list-item-content>
-          <v-list-item-title>John Leider</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-      <!-- <v-divider></v-divider> -->
-      <v-list dense>
-        <v-list-item v-for="item in items" :key="item.title" link>
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+  <v-layout wrap="wrap">
+    <v-navigation-drawer v-model="isSelectedChild" absolute="absolute" temporary="temporary">
+      <v-img :aspect-ratio="16/9" src="/sursa.png">
+        <v-layout class="lightbox white--text" pa-2="pa-2" column="column" fill-height="fill-height">
+          <v-spacer />
+          <v-flex shrink="shrink">
+            <div class="subheading">
+              <span>San Pedro de Mala</span>
+            </div>
+          </v-flex>
+        </v-layout>
+      </v-img>
+      <v-list class="pt-0" dense="dense">
+        <div v-for="(opt, iopt) in items2" :key="iopt">
+          <v-list-tile v-if="opt.to" :to="opt.to">
+            <v-list-tile-action>
+              <v-icon>{{ opt.icon }}</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-title>{{ opt.title }}</v-list-tile-title>
+          </v-list-tile>
+          <v-list-group
+            v-else-if="opt.items.length > 0"
+            :prepend-icon="opt.icon"
+            no-action
+          >
+            <v-list-tile slot="activator">
+              <v-list-tile-title>{{ opt.title }}</v-list-tile-title>
+            </v-list-tile>
+            <v-list-tile
+              v-for="(it, iit) in opt.items"
+              :key="iit"
+              :to="it.to"
+            >
+              <v-list-tile-title>{{ it.title }}</v-list-tile-title>
+              <v-list-tile-action>
+                <v-icon>{{ it.icon }}</v-icon>
+              </v-list-tile-action>
+            </v-list-tile>
+          </v-list-group>
+        </div>
       </v-list>
     </v-navigation-drawer>
-  </v-sheet>
+  </v-layout>
 </template>
+
 <script>
 export default {
+  props: {
+    drawer: { type: Boolean, default: false }
+  },
   data () {
     return {
-      drawer: null,
-      items: [
-        { title: 'Home', icon: 'mdi-ballot-outline' },
-        { title: 'About', icon: 'mdi-account' }
+      isSelectedChild: this.drawer,
+      items2: [
+        { icon: 'home', title: 'Inicio', to: '/' },
+        { icon: 'ballot', title: 'Nosotros', to: '/nosotros' },
+        {
+          icon: 'settings',
+          title: 'Áreas de Formación',
+          items: [
+            { icon: '', title: 'Desarrollo de Sistemas de Información', to: '/especialidad/dsi' },
+            { icon: '', title: 'Enfermería Técnica', to: '/especialidad/enfermeria' },
+            { icon: '', title: 'Contabilidad', to: '/especialidad/contabilidad' }
+          ]
+        },
+        {
+          icon: 'settings',
+          title: 'Cursos y Programas de Extensión',
+          items: [
+            { icon: '', title: 'Admisión', to: '/' },
+            { icon: '', title: 'Servicios de Biblioteca', to: '/' },
+            { icon: '', title: 'Sistema de Admisión', to: '/' },
+            { icon: '', title: 'Bolsa de Trabajo', to: '/' },
+            { icon: '', title: 'Titulación', to: '/' },
+            { icon: '', title: 'Revista', to: '/' },
+            { icon: '', title: 'Contáctenos', to: '/' }
+          ]
+        }
       ]
+    }
+  },
+  watch: {
+    drawer () {
+      this.isSelectedChild = true
     }
   }
 }
