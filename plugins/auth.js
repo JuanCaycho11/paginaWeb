@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = `http://${process.env.HOST || 'localhost'}:${process.env.PORT || 4000}/api/`
+const API_URL = `http://${process.env.HOST || 'localhost'}:${process.env.PORT || 3000}/api/`
 const LOGIN_URL = API_URL + 'signin'
 const SIGNUP_URL = API_URL + 'signup'
 

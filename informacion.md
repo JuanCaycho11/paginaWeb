@@ -1,3 +1,5 @@
+# create project nuxt 
+    https://nuxtjs.org/guide/installation
 # creacion de ramas
     git checkout -b "descripcion"
 # agregar los cambios
