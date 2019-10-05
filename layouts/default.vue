@@ -1,24 +1,20 @@
 <template>
-<v-app >
-  <toolBar />
-  <v-container>
+  <v-app>
+    <toolBar />
     <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-content>
-  </v-container>
-        <pie />
+    <pie />
   </v-app>
 </template>
 
 <script>
-import Pie from '~/components/Pie.vue'
-import toolBar from '~/components/toolBar.vue'
+import toolBar from '~/components/toolBar'
+import Pie from '~/components/Pie'
 export default {
   components: {
-    Pie,
-    toolBar
+    toolBar,
+    Pie
   }
 }
 </script>
