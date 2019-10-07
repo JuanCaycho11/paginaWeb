@@ -11,15 +11,12 @@
     >
       <v-app-bar-nav-icon @click="drawer = !drawer" />
 
-      <v-img
-        :aspect-ratio="16/9"
-        src="/logo2.png"
-        max-width="250"
-        max-height="60
-      0"
-      />
-      <!-- <v-toolbar-title>SURSA GAS</v-toolbar-title> -->
-      <!-- <v-spacer /> -->
+      <v-toolbar-title>
+        <v-column>
+          <v-img src="/logo.png" />
+        </v-column>
+      </v-toolbar-title>
+      <v-spacer />
       <v-toolbar-items class="hidden-sm-only hidden-xs-only">
         <v-btn
           v-for="i in menus"
@@ -32,7 +29,6 @@
           {{ i.title }}
         </v-btn>
       </v-toolbar-items>
-      </v-img>
     </v-toolbar>
   </div>
 </template>
