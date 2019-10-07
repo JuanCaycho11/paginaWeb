@@ -36,6 +36,23 @@
         <v-divider /><br>
         <span class="grey--text">Ser reconocida como la empresa líder del Perú en el abastecimiento<br> de gas y soluciones energéticas en base a hidrocarburos a nivel nacional, transmitiendo cercanía y modernidad a nuestros clientes.Ser una empresa<br> de energía que contribuya al desarrollo.</span>
       </v-flex>
+      <v-flex xs6 class="mt-5">
+        <br>
+        <h1 class="grey--text">
+          VALORES
+        </h1>
+        <v-divider /><br>
+        <span class="grey--text">Trabajar con el grupo que nos rodea, para alcanzar objetivos<br> comunes. Entregando mi mejor actitud, compromiso, conocimiento,<br> habilidad y esfuerzo para cumplir con mi responsabilidad y la del<br> equipo de trabajo</span>
+      </v-flex>
+      <v-flex xs6>
+        <v-row align="center" justify="center">
+          <v-img
+            src="https://retos-directivos.eae.es/wp-content/uploads/2016/05/valores-empresariales.jpg"
+            max-width="520"
+            max-height="360"
+          />
+        </v-row>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
