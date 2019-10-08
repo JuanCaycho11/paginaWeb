@@ -1,20 +1,17 @@
 <template>
   <v-app>
-    <toolBar />
+    <toolbar />
     <v-content>
       <nuxt />
     </v-content>
-    <pie />
   </v-app>
 </template>
 
 <script>
-import toolBar from '~/components/toolBar'
-import Pie from '~/components/Pie'
+import toolbar from '~/components/layout/toolBar'
 export default {
   components: {
-    toolBar,
-    Pie
+    toolbar
   }
 }
 </script>
