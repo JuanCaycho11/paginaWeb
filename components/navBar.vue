@@ -1,12 +1,12 @@
 <template>
   <v-layout wrap="wrap">
     <v-navigation-drawer v-model="isSelectedChild" absolute="absolute" temporary="temporary">
-      <v-img :aspect-ratio="16/9" src="/sursa.png">
+      <v-img :aspect-ratio="16/9" src="/nav.png">
         <v-layout class="lightbox white--text" pa-2="pa-2" column="column" fill-height="fill-height">
           <v-spacer />
           <v-flex shrink="shrink">
             <div class="subheading">
-              <span>San Pedro de Mala</span>
+              <span>Planta Envasadora de GLP</span>
             </div>
           </v-flex>
         </v-layout>
@@ -53,10 +53,10 @@ export default {
     return {
       isSelectedChild: this.drawer,
       items2: [
-        { icon: 'home', title: 'Inicio', to: '/' },
-        { icon: 'ballot', title: 'Nosotros', to: '/nosotros' },
+        { icon: 'mdi-home', title: 'Inicio', to: '/' },
+        { icon: 'mdi-account-group', title: 'Nosotros', to: '/nosotros' },
         {
-          icon: 'settings',
+          icon: 'mdi-book-minus',
           title: 'Áreas de Formación',
           items: [
             { icon: '', title: 'Desarrollo de Sistemas de Información', to: '/especialidad/dsi' },
@@ -65,7 +65,7 @@ export default {
           ]
         },
         {
-          icon: 'settings',
+          icon: 'mdi-book-minus',
           title: 'Cursos y Programas de Extensión',
           items: [
             { icon: '', title: 'Admisión', to: '/' },

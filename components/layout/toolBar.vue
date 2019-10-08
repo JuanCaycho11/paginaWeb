@@ -4,17 +4,13 @@
     <v-toolbar
       :color="(dark ? '' : 'black')"
       dark
-      :fixed="extended"
-      :app="extended"
-      :clipped-left="extended"
-      :extended="extended"
     >
       <v-toolbar-side-icon v-if="$store.getters['auth/isAuthenticated']" @click="drawer = !drawer" />
       <h2 style="color:#fff; text-decoration:none">
         Crud basic Vue
       </h2>
       <v-spacer />
-      <v-btn v-if="!$store.getters['auth/isAuthenticated']" flat to="/auth/sign-in">
+      <v-btn v-if="!$store.getters['auth/isAuthenticated']" text to="/auth/sign-in">
         INICIAR SESIÓN
       </v-btn>
       <v-menu v-if="$store.getters['auth/isAuthenticated']" :nudge-width="160" left>

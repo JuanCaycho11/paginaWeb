@@ -11,8 +11,8 @@
       @savedialog="save()"
     >
       <v-container grid-list-md>
-        <v-layout wrap>
-          <v-flex xs12>
+        <v-row wrap>
+          <v-col xs12>
             <v-text-field
               ref="nombre"
               v-model.trim="editedItem.name"
@@ -23,8 +23,8 @@
               @input="$v.editedItem.name.$touch()"
               @blur="$v.editedItem.name.$touch()"
             />
-          </v-flex>
-          <v-flex xs12>
+          </v-col>
+          <v-col xs12>
             <v-text-field
               ref="descripcion"
               v-model.trim="editedItem.description"
@@ -35,8 +35,8 @@
               @input="$v.editedItem.description.$touch()"
               @blur="$v.editedItem.description.$touch()"
             />
-          </v-flex>
-        </v-layout>
+          </v-col>
+        </v-row>
       </v-container>
     </modalForm>
   </div>

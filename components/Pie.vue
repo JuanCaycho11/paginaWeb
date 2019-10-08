@@ -15,7 +15,7 @@
           class="mx-4 white--text"
           icon
         >
-          <v-icon size="24px">
+          <v-icon size="26px">
             {{ icon }}
           </v-icon>
         </v-btn>
@@ -28,7 +28,7 @@
       <v-divider />
 
       <v-card-text class="white--text">
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+        {{ new Date().getFullYear() }} — <strong>Sursa Gas</strong>
       </v-card-text>
     </v-card>
   </v-footer>
@@ -37,11 +37,11 @@
 export default {
   data: () => ({
     icons: [
-      'fab fa-facebook',
-      'fab fa-twitter',
-      'fab fa-google-plus',
-      'fab fa-linkedin',
-      'fab fa-instagram'
+      'mdi-facebook',
+      'mdi-twitter',
+      'mdi-google-plus',
+      'mdi-linkedin',
+      'mdi-instagram'
     ]
   })
 }

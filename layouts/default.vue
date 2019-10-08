@@ -4,14 +4,19 @@
     <v-content>
       <nuxt />
     </v-content>
+    <pie />
   </v-app>
 </template>
 
 <script>
-import toolbar from '~/components/layout/toolBar'
+
+import toolbar from '~/components/toolBar'
+import pie from '~/components/Pie'
 export default {
   components: {
-    toolbar
+    toolbar,
+    pie
+
   }
 }
 </script>

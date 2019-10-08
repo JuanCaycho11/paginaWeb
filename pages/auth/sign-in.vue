@@ -2,22 +2,21 @@
   <v-card class="elevation-12 login-form">
     <v-container grid-list-xl text-xs-center>
       <v-layout row wrap>
-        <v-flex xs12 class="text-xs-center">
+        <v-flex xs10 class="text-xs-center">
           <router-link to="/">
             <img src="/logo.png" alt class="circle responsive-img valign profile-image-login">
           </router-link>
-          <p class="center login-form-text">
-            Company Name
-          </p>
+        </v-flex>
+        <v-flex xs2>
           <v-btn to="/" small fab class="top-right-fixed white">
-            <v-icon>close</v-icon>
+            <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-flex>
         <v-flex xs12>
           <v-form @submit.prevent="login">
             <v-text-field
               v-model="user.userName"
-              prepend-icon="person"
+              prepend-icon="mdi-account"
               name="login"
               label="Usuario"
               :error-messages="userNameErrors"
@@ -28,9 +27,9 @@
             <v-text-field
               id="password"
               v-model="user.password"
-              prepend-icon="lock_outline"
+              prepend-icon="mdi-lock-open"
               :error-messages="passwordErrors"
-              :append-icon="show1 ? 'visibility_off' : 'visibility'"
+              :append-icon="show1 ? 'mdi-eye-off' : 'mdi-eye'"
               name="password"
               label="Contraseña"
               :type="show1 ? 'text' : 'password'"
@@ -39,7 +38,7 @@
               @blur="$v.user.password.$touch()"
               @click:append="show1 = !show1"
             />
-            <v-btn block color="primary" type="submit">
+            <v-btn block color="success" type="submit">
               Iniciar sesión
             </v-btn>
           </v-form>
@@ -48,20 +47,19 @@
           {{ message }}
         </v-flex>
         <v-flex xs12>
-          <v-layout>
+          <v-flex>
             <p class="margin medium-small">
               <router-link to="/auth/register">
                 ¡Regístrate ahora!
               </router-link>
             </p>
             <v-spacer />
-          </v-layout>
+          </v-flex>
         </v-flex>
       </v-layout>
     </v-container>
   </v-card>
 </template>
-
 <script>
 import { validationMixin } from 'vuelidate'
 import { required, minLength } from 'vuelidate/lib/validators'

@@ -4,11 +4,11 @@
       <v-img :aspect-ratio="16/9" src="/img/banner-user.jpg">
         <v-layout class="lightbox white--text" pa-2="pa-2" column="column" fill-height="fill-height">
           <v-spacer />
-          <v-flex shrink="shrink">
+          <v-col shrink="shrink">
             <div class="subheading">
               <span>{{ $store.state.auth.user.fullName }}</span>
             </div>
-          </v-flex>
+          </v-col>
         </v-layout>
       </v-img>
       <v-list class="pt-0" dense="dense">
