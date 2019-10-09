@@ -4,13 +4,14 @@
       <v-img :aspect-ratio="16/9" src="/nav.png">
         <v-layout class="lightbox white--text" pa-2="pa-2" column="column" fill-height="fill-height">
           <v-spacer />
-          <v-flex shrink="shrink">
-            <div class="subheading">
-              <span>Planta Envasadora de GLP</span>
-            </div>
-          </v-flex>
         </v-layout>
       </v-img>
+      <v-flex>
+        <div justify-center>
+          Planta Envasadora de Gas
+        </div>
+      </v-flex>
+      <v-divider /><br>
       <v-list class="pt-0" dense="dense">
         <div v-for="(opt, iopt) in items2" :key="iopt">
           <v-list-tile v-if="opt.to" :to="opt.to">
