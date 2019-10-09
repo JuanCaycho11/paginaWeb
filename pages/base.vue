@@ -1,9 +1,9 @@
 <template>
-  <v-layout row wrap>
-    <v-flex>
+  <v-row row wrap>
+    <v-col>
       <v-card color="grey lighten-4" flat height="100%">
         <v-toolbar color="white">
-          <v-icon>streetview</v-icon>
+          <v-icon>mdi-account-circle</v-icon>
           <v-toolbar-title>BASE</v-toolbar-title>
           <v-divider class="mx-2" inset="inset" vertical="vertical" />
           <v-spacer />
@@ -15,8 +15,8 @@
         </v-toolbar>
         <v-card>
           <v-container fluid>
-            <v-layout row wrap>
-              <v-flex xs12>
+            <v-row row wrap>
+              <v-col xs12>
                 <v-card>
                   <v-card-title>
                     <add-base
@@ -67,13 +67,13 @@
                     </template>
                   </v-data-table>
                 </v-card>
-              </v-flex>
-            </v-layout>
+              </v-col>
+            </v-row>
           </v-container>
         </v-card>
       </v-card>
-    </v-flex>
-  </v-layout>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
@@ -83,7 +83,7 @@ import config from '~/config'
 import addBase from '~/components/base/add'
 export default {
   name: 'Base',
-  middleware: 'auth',
+  // middleware: 'auth',
   components: {
     addBase
   },
@@ -108,12 +108,12 @@ export default {
       idBase: ''
     }
   },
-  async asyncData ({ params, error, store }) {
-    const bases = await axios.get(`${config.URL}base`, {
-      headers: store.getters['auth/getAuthHeader']
-    })
-    return { bases: bases.data.data }
-  },
+  // async asyncData ({ params, error, store }) {
+  //   const bases = await axios.get(`${config.URL}base`, {
+  //     headers: store.getters['auth/getAuthHeader']
+  //   })
+  //   return { bases: bases.data.data }
+  // },
   methods: {
     editItem (item) {
       this.idBase = item._id

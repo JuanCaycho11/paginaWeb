@@ -1,19 +1,19 @@
 <template>
   <v-container grid-list-xl text-xs-center>
-    <v-layout row wrap align-center justify-center>
-      <v-flex xs12 sm6 md5 lg4>
+    <v-row row wrap align-center justify-center>
+      <v-col xs12 sm6 md5 lg4>
         <v-card class="elevation-12 login-form">
           <v-container grid-list-xl text-xs-center>
-            <v-layout row wrap>
-              <v-flex xs12 class="text-xs-center">
+            <v-row row wrap>
+              <v-col xs12 class="text-xs-center">
                 <router-link to="/">
                   <img src="/logo.png" alt="" class="circle responsive-img valign profile-image-login">
                 </router-link>
                 <p class="center login-form-text">
                   Volver a establecer contraseña
                 </p>
-              </v-flex>
-              <v-flex xs12>
+              </v-col>
+              <v-col xs12>
                 <v-form @submit.prevent="onChangePassword">
                   <v-text-field
                     id="password"
@@ -47,12 +47,12 @@
                     Enviar
                   </v-btn>
                 </v-form>
-              </v-flex>
-            </v-layout>
+              </v-col>
+            </v-row>
           </v-container>
         </v-card>
-      </v-flex>
-    </v-layout>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 

@@ -28,6 +28,11 @@
         >
           {{ i.title }}
         </v-btn>
+        <v-btn color="green" depressed flat to="/auth/sign-in">
+          <v-icon>
+            mdi-login
+          </v-icon>
+        </v-btn>
       </v-toolbar-items>
     </v-toolbar>
   </div>

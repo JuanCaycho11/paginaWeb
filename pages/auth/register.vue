@@ -2,22 +2,21 @@
   <v-card class="elevation-12 login-form">
     <v-container grid-list-xl text-xs-center>
       <v-layout row wrap>
-        <v-flex xs12 class="text-xs-center">
+        <v-flex xs10 class="text-xs-center">
           <router-link to="/">
             <img src="/logo.png" alt="" class="circle responsive-img valign profile-image-login">
           </router-link>
-          <p class="center login-form-text">
-            Company Name
-          </p>
+        </v-flex>
+        <v-flex xs2>
           <v-btn to="/" small fab class="top-right-fixed white">
-            <v-icon>close</v-icon>
+            <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-flex>
         <v-flex xs12>
           <v-form @submit.prevent="onSignup">
             <v-text-field
               v-model="user.fullName"
-              prepend-icon="person_outline"
+              prepend-icon="mdi-account-tie"
               name="nombres"
               label="Nombres"
               :error-messages="fullNameErrors"
@@ -27,7 +26,7 @@
             />
             <v-text-field
               v-model="user.userName"
-              prepend-icon="person"
+              prepend-icon="mdi-account"
               name="userName"
               label="Usuario"
               :error-messages="emailErrors"
@@ -39,9 +38,9 @@
             <v-text-field
               id="password"
               v-model="user.password"
-              prepend-icon="lock_outline"
+              prepend-icon="mdi-lock-open"
               :error-messages="passwordErrors"
-              :append-icon="show1 ? 'visibility_off' : 'visibility'"
+              :append-icon="show1 ? 'mdi-eye-off' : 'mdi-eye'"
               name="password"
               label="Contraseña"
               :type="show1 ? 'text' : 'password'"
@@ -59,13 +58,13 @@
           {{ message }}
         </v-flex>
         <v-flex xs12 class="text-xs-center">
-          <v-layout justify-center>
+          <v-flex justify-center>
             <p>
               ¿Ya tienes una cuenta? <router-link to="/auth/sign-in">
                 Inicia sesión
               </router-link>
             </p>
-          </v-layout>
+          </v-flex>
         </v-flex>
       </v-layout>
     </v-container>

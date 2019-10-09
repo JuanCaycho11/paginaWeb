@@ -1,17 +1,16 @@
 <template>
   <v-layout wrap="wrap">
     <v-navigation-drawer v-model="isSelectedChild" absolute="absolute" temporary="temporary">
-      <v-img :aspect-ratio="16/9" src="/nav.png">
+      <v-img :aspect-ratio="16/9" src="/img/banner-user.jpg">
         <v-layout class="lightbox white--text" pa-2="pa-2" column="column" fill-height="fill-height">
           <v-spacer />
+          <v-col shrink="shrink">
+            <div class="subheading">
+              <span>{{ $store.state.auth.user.fullName }}</span>
+            </div>
+          </v-col>
         </v-layout>
       </v-img>
-      <v-flex>
-        <div justify-center>
-          Planta Envasadora de Gas
-        </div>
-      </v-flex>
-      <v-divider /><br>
       <v-list class="pt-0" dense="dense">
         <div v-for="(opt, iopt) in items2" :key="iopt">
           <v-list-tile v-if="opt.to" :to="opt.to">
@@ -54,28 +53,17 @@ export default {
     return {
       isSelectedChild: this.drawer,
       items2: [
-        { icon: 'mdi-home', title: 'Inicio', to: '/' },
-        { icon: 'mdi-account-group', title: 'Nosotros', to: '/nosotros' },
+        { icon: 'home', title: 'Base', to: '/base' },
+        { icon: 'apps', title: 'Cliente', to: '/customer' },
+        { icon: 'ballot', title: 'Registro', to: '/' },
         {
-          icon: 'mdi-book-minus',
-          title: 'Áreas de Formación',
+          icon: 'settings',
+          title: 'Mis Ajustes',
           items: [
-            { icon: '', title: 'Desarrollo de Sistemas de Información', to: '/especialidad/dsi' },
-            { icon: '', title: 'Enfermería Técnica', to: '/especialidad/enfermeria' },
-            { icon: '', title: 'Contabilidad', to: '/especialidad/contabilidad' }
-          ]
-        },
-        {
-          icon: 'mdi-book-minus',
-          title: 'Cursos y Programas de Extensión',
-          items: [
-            { icon: '', title: 'Admisión', to: '/' },
-            { icon: '', title: 'Servicios de Biblioteca', to: '/' },
-            { icon: '', title: 'Sistema de Admisión', to: '/' },
-            { icon: '', title: 'Bolsa de Trabajo', to: '/' },
-            { icon: '', title: 'Titulación', to: '/' },
-            { icon: '', title: 'Revista', to: '/' },
-            { icon: '', title: 'Contáctenos', to: '/' }
+            { icon: 'streetview', title: 'Opcion 1', to: '/' },
+            { icon: 'alternate_email', title: 'Opcion 2', to: '/' },
+            { icon: 'mail', title: 'Opcion 3', to: '/' },
+            { icon: 'security', title: 'Opcion 4', to: '/' }
           ]
         }
       ]
