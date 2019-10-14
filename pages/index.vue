@@ -43,10 +43,6 @@
             </v-card-actions>
           </v-card>
         </v-flex>
-
-        <v-flex xs12 class="primary">
-          asda
-        </v-flex>
       </v-layout>
     </v-container>
   </div>

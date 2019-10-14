@@ -6,29 +6,28 @@
       dark
       :fixed="extended"
       :app="extended"
-      :clipped-left="extended"
       :extended="extended"
     >
       <v-app-bar-nav-icon @click="drawer = !drawer" />
 
       <v-toolbar-title>
-        <v-column>
+        <v-col class="p-2">
           <v-img src="/logo.png" />
-        </v-column>
+        </v-col>
       </v-toolbar-title>
       <v-spacer />
       <v-toolbar-items class="hidden-sm-only hidden-xs-only">
         <v-btn
           v-for="i in menus"
           :key="i.title"
-          color="green"
+          text
+          color="light"
           depressed
-          flat
           :to="i.path"
         >
           {{ i.title }}
         </v-btn>
-        <v-btn color="green" depressed flat to="/auth/sign-in">
+        <v-btn text color="light" depressed to="/auth/sign-in">
           <v-icon>
             mdi-login
           </v-icon>

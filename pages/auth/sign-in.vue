@@ -1,6 +1,6 @@
 <template>
   <v-card class="elevation-12 login-form">
-    <v-container grid-list-xl text-xs-center>
+    <v-container grid-list-xl text-xs-center align-center>
       <v-layout row wrap>
         <v-flex xs10 class="text-xs-center">
           <router-link to="/">
@@ -39,7 +39,7 @@
               @click:append="show1 = !show1"
             />
             <v-btn block color="success" type="submit">
-              Iniciar sesión
+              Iniciar sesións
             </v-btn>
           </v-form>
         </v-flex>
