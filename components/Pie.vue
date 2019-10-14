@@ -3,12 +3,11 @@
     dark
     padless
   >
-    <v-card
-      flat
-      tile
+    <v-layout
+      wrap
       class="green lighten-1 white--text text-center"
     >
-      <v-card-text>
+      <v-flex xs12>
         <v-btn
           v-for="icon in icons"
           :key="icon"
@@ -19,18 +18,31 @@
             {{ icon }}
           </v-icon>
         </v-btn>
-      </v-card-text>
-
-      <v-card-text class="white--text pt-0">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </v-card-text>
-
-      <v-divider />
+        <v-divider />
+      </v-flex>
+      <v-layout class="white--text pt-0" wrap row>
+        <v-flex xs3>
+          <h5>PLANTA ENVASADORA:</h5>
+          <span>Panamericana Sur Km. 59 Olof <br> Palme Telf.: 231-9006/231-9005</span>
+        </v-flex>
+        <v-flex xs3>
+          <h5>CAÑETE:</h5>
+          <span>Av. Jose Galvez C-2 Tda. N° 13<br> San Vicente - Cañete Telf.: 581-2538</span>
+        </v-flex>
+        <v-flex xs3>
+          <h5>CHINCHA:</h5>
+          <span>Prolong. Pedro Moreno 884 <br> Chincha Alta. Telf.: 056-269216</span>
+        </v-flex>
+        <v-flex xs3>
+          <h5>ICA:</h5>
+          <span>Urb. Villa Aurora los Fardos.<br> ICA Telf.: 056-218320</span>
+        </v-flex>
+      </v-layout>
 
       <v-card-text class="white--text">
         {{ new Date().getFullYear() }} — <strong>Sursa Gas</strong>
       </v-card-text>
-    </v-card>
+    </v-layout>
   </v-footer>
 </template>
 <script>
@@ -39,10 +51,15 @@ export default {
     icons: [
       'mdi-facebook',
       'mdi-twitter',
-      'mdi-google-plus',
+      'mdi-whatsapp',
       'mdi-linkedin',
       'mdi-instagram'
     ]
   })
 }
 </script>
+<style scoped>
+span {
+font-size: 14px;
+}
+</style>

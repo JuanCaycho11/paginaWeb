@@ -2,7 +2,7 @@
   <div>
     <nav-bar :drawer="drawer" />
     <v-toolbar
-      :color="(green ? '' : 'green')"
+      color="green"
       dark
       :fixed="extended"
       :app="extended"

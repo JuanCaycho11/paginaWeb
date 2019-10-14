@@ -1,13 +1,13 @@
 <template>
-  <v-layout wrap="wrap">
-    <v-navigation-drawer v-model="isSelectedChild" absolute="absolute" temporary="temporary">
+  <v-layout wrap row>
+    <v-navigation-drawer v-model="isSelectedChild" absolute temporary>
       <v-img :aspect-ratio="16/9" src="/nav.png">
-        <v-layout class="lightbox white--text" pa-2="pa-2" column="column" fill-height="fill-height">
+        <v-layout class="lightbox white--text" pa-2="pa-2" column fill-height="fill-height">
           <v-spacer />
         </v-layout>
       </v-img>
       <v-flex>
-        <div justify-center>
+        <div>
           Planta Envasadora de Gas
         </div>
       </v-flex>
