@@ -1,6 +1,6 @@
 <template>
   <v-card class="elevation-12 login-form">
-    <v-container grid-list-xl text-xs-center align-center>
+    <v-container grid-list-xl text-xs-center>
       <v-layout row wrap>
         <v-flex xs10 class="text-xs-center">
           <router-link to="/">
