@@ -3,13 +3,13 @@
     <v-dialog v-model="dialog" persistent scrollable :max-width="width">
       <v-card>
         <v-card-title primary-title>
-          <v-list-tile-action v-if="e1 > 1">
+          <v-list-tile-actions v-if="e1 > 1">
             <v-btn v-if="editedIndex === -1" icon ripple @click="enviar">
               <v-icon color="grey lighten-1">
                 keyboard_arrow_left
               </v-icon>
             </v-btn>
-          </v-list-tile-action>
+          </v-list-tile-actions>
           <v-spacer />
           <span class="headline">
             {{ formTitle }}

@@ -24,16 +24,15 @@
           v-for="item in cards"
           :key="item.id"
           xs12
-          sm12
           md4
-          px-8
-          pt-6
+          px-7
+          pt-8
         >
-          <v-card hover>
+          <v-card hover width="300">
             <v-img :aspect-ratio="16/9" :src="item.img" />
             <v-card-title>
               <div>
-                <h3>{{ item.titulo }}</h3>
+                <h5>{{ item.titulo }}</h5>
                 <p>{{ item.descripcion }}</p>
               </div>
             </v-card-title>
@@ -43,6 +42,10 @@
               </v-btn>
             </v-card-actions>
           </v-card>
+        </v-flex>
+
+        <v-flex xs12 class="primary">
+          asda
         </v-flex>
       </v-layout>
     </v-container>
@@ -60,9 +63,9 @@ export default {
         { src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg' }
       ],
       cards: [
-        { img: 'https://www.perualdia.pe/wp-content/uploads/2018/07/Noticia-78065-gas.jpg', titulo: 'Servicios Sursa Gas', descripcion: 'Reparto a domicilio, venta de reguladores, asistencia técnica, instalación de redes GLP.' },
-        { img: 'https://pic.truckscout24.net/images-big/09/81/0018728109001.jpg', titulo: 'titulo #1', descripcion: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. am repellendus? Similique, dolorum nulla. Natus reiciendis perspiciatis cum consequuntur?' },
-        { img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Bw_evjLSaZquEBBVqw6Q7-mBstXp4T603a5--RpfndDJ-mPW', titulo: 'titulo #1', descripcion: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. am repellendus? Similique, dolorum nulla. Natus reiciendis perspiciatis cum consequuntur?' }
+        { img: 'https://www.perualdia.pe/wp-content/uploads/2018/07/Noticia-78065-gas.jpg', titulo: 'Cobertura', descripcion: 'Estamos en varios distritos de Lima. Podrás encontrar una estación cercana a tu hogar o trabajo.' },
+        { img: 'https://pic.truckscout24.net/images-big/09/81/0018728109001.jpg', titulo: 'Calidad', descripcion: 'El gas que distribuimos cumple con la más alta calidad en el mercado garantizando combustión precisa.' },
+        { img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Bw_evjLSaZquEBBVqw6Q7-mBstXp4T603a5--RpfndDJ-mPW', titulo: 'Experiencia', descripcion: 'Llevamos más de 10 años en el mercado, y estamos capacitados para brindarte la atención que te mereces.' }
       ]
     }
   }

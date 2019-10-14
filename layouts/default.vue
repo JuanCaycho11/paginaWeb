@@ -16,7 +16,6 @@ export default {
   components: {
     toolbar,
     pie
-
   }
 }
 </script>
