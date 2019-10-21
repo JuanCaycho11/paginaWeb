@@ -8,10 +8,9 @@ const app = require('express')()
 const server = require('http').createServer(app)
 
 mongoose.connect(config.db, (err, res) => {
-  if (err) console.log('Error en conectar la base de datos')
+  if (err) console.log('Error en conectar la base de datos', err)
   console.log('Conexion a la base de datos')
 })
-
 app.use(session({
   secret: config.SECRET_SESSION,
   resave: false,

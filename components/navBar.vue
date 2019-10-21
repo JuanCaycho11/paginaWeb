@@ -8,7 +8,7 @@
       </v-img>
       <v-flex>
         <div>
-          Planta Envasadora de Gas
+          Planta Envasadora de Gas (GLP)
         </div>
       </v-flex>
       <v-divider /><br>
@@ -56,21 +56,19 @@ export default {
       items2: [
         { icon: 'mdi-home', title: 'Inicio', to: '/' },
         { icon: 'mdi-account-group', title: 'Nosotros', to: '/nosotros' },
+        { icon: 'mdi-purse', title: 'Productos', to: '/productos' },
+        { icon: 'mdi-close-circle', title: 'Salir', to: '/auth/sign-in' },
         {
           icon: 'mdi-book-minus',
           title: 'Áreas de Formación',
           items: [
-            { icon: '', title: 'Desarrollo de Sistemas de Información', to: '/especialidad/dsi' },
-            { icon: '', title: 'Enfermería Técnica', to: '/especialidad/enfermeria' },
-            { icon: '', title: 'Contabilidad', to: '/especialidad/contabilidad' }
+            { icon: '', title: 'Misión, visión y valores', to: '/especialidad/dsi' }
           ]
         },
         {
           icon: 'mdi-book-minus',
           title: 'Cursos y Programas de Extensión',
           items: [
-            { icon: '', title: 'Admisión', to: '/' },
-            { icon: '', title: 'Servicios de Biblioteca', to: '/' },
             { icon: '', title: 'Contáctenos', to: '/' }
           ]
         }

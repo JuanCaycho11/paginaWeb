@@ -55,7 +55,7 @@ export const actions = {
   },
   async login ({ commit }, creds) {
     try {
-      const { data } = await axios.post('/api/signin', creds)
+      const { data } = await axios.post('/api/signIn', creds)
       commit('SET_USER', data.user)
       commit('SET_TOKEN', data.token)
     } catch (error) {
