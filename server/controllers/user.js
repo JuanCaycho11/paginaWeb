@@ -46,10 +46,10 @@ function updateUser (req, res) {
 
 function signIn (req, res) {
   User.findOne({ userName: req.body.userName.toLowerCase(), password: bcrypt.hashSync(req.body.password + ' ' + config.SECRET_USER, config.SALT) }).select({ _id: 1, fullName: 1, userName: 1, rol: 1, price: 1 }).exec((err, user) => {
-    if (err) return res.status(500).send({ message: `Error al realizar la petición ${err}` })
-    if (!user) return res.status(404).send({ message: `La contraseña y/o el usuario son incorrectos.` })
+    if (err) return res.status(500).send({ message: 'Error al realizar la petición ${err}' })
+    if (!user) return res.status(404).send({ message: 'La contraseña y/o el usuario son incorrectos.' })
     User.update({ _id: user._id }, { lastDateLog: Date.now() }, (err, affected, res) => {
-      if (err) console.log(`Error al realizar la petición ${err}`)
+      if (err) console.log('Error al realizar la petición ${err}')
     })
     let loginToken = service.createToken(user, 14)
     req.session.authUser = { fullName: user.fullName, userName: user.userName }

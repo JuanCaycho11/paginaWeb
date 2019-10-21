@@ -50,7 +50,7 @@ function getRegister (req, res) {
     }
   }]).exec((err, registers) => {
     if (err) return res.status(500).send({ message: `Error al realizar la petición ${err}` })
-    if (!registers) return res.status(400).send({ message: `No existen registros en la register de datos.` })
+    if (!registers) return res.status(400).send({ message: `No existen registros en la registros de datos.` })
     res.status(200).send({ data: registers })
   })
 }

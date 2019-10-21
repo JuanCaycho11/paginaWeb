@@ -23,7 +23,7 @@
               required
               @input="$v.user.userName.$touch()"
               @blur="$v.user.userName.$touch()"
-            />
+            /><br>
             <v-text-field
               id="password"
               v-model="user.password"
@@ -37,9 +37,9 @@
               @input="$v.user.password.$touch()"
               @blur="$v.user.password.$touch()"
               @click:append="show1 = !show1"
-            />
+            /><br>
             <v-btn block color="success" type="submit">
-              Iniciar sesións
+              Iniciar sesión
             </v-btn>
           </v-form>
         </v-flex>
@@ -78,7 +78,7 @@ export default {
   data () {
     return {
       user: {
-        userName: 'mcervera',
+        userName: 'JMCAYCHO',
         password: '11111111'
       },
       message: '',

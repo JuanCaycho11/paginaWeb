@@ -83,7 +83,7 @@ import config from '~/config'
 import addBase from '~/components/base/add'
 export default {
   name: 'Base',
-  // middleware: 'auth',
+  middleware: 'auth',
   components: {
     addBase
   },
@@ -108,12 +108,12 @@ export default {
       idBase: ''
     }
   },
-  // async asyncData ({ params, error, store }) {
-  //   const bases = await axios.get(`${config.URL}base`, {
-  //     headers: store.getters['auth/getAuthHeader']
-  //   })
-  //   return { bases: bases.data.data }
-  // },
+  async asyncData ({ params, error, store }) {
+    const bases = await axios.get(`${config.URL}base`, {
+      headers: store.getters['auth/getAuthHeader']
+    })
+    return { bases: bases.data.data }
+  },
   methods: {
     editItem (item) {
       this.idBase = item._id
